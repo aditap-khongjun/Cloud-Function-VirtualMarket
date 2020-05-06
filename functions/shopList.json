@@ -1,0 +1,196 @@
+{
+    "shop1" : {
+        "name" : "ร้านค้าประชารัฐ ธงฟ้า ตำบลศิลา",
+        "description" : "ร้านขายของชำ",
+        "phone" : "0835601321",
+        "latitude": 16.731957,
+        "longitude": 102.861568
+    },
+    "shop2" : {
+        "name" : "หน้ามอ ร้านขายยา",
+        "description" : "ร้านขายยา",
+        "phone" : "043238079",
+        "latitude" : 16.732648,
+        "longitude" : 102.861605
+    },
+    "shop3" : {
+        "name" : "Mama Big Restaurant",
+        "description" : "ร้านอาหาร",
+        "phone" : "043245789",
+        "latitude" : 16.731596,
+        "longitude" : 102.861522,
+        "facebookurl" : "https://www.facebook.com/mamabigkk"
+    },
+    "shop4" : {
+        "name" : "แซบนัวครัวอิสาน Zab Nour",
+        "description" : "ร้านอาหาร",
+        "phone" : "043244119",
+        "latitude" : 16.731387,
+        "longitude" : 102.861556
+    },
+    "shop5" : {
+        "name" : "ร้านดีวอช คาร์แคร์ขอนแก่น",
+        "description" : "ร้านคาร์แคร์",
+        "phone" : "0843481561",
+        "latitude" : 16.731234,
+        "longitude" : 102.861225
+    },
+    "shop6" : {
+        "name" : "ร้านดวงใจแม่",
+        "description" : "สินค้าแม่และเด็ก",
+        "phone" : "0880555657",
+        "latitude" : 16.731203,
+        "longitude" : 102.860626,
+        "facebookurl" : "https://www.facebook.com/chanya55"
+    },
+    "shop7" : {
+        "name" : "ขอบใจเด้อ-cuisine",
+        "description" : "ร้านอาหาร",
+        "phone" : "043042132",
+        "latitude" : 16.731366,
+        "longitude" : 102.860218,
+        "facebookurl" : "https://www.facebook.com/kobjaidur"
+    },
+    "shop8" : {
+        "name" : "ร้านยาพิทยาเภสัช",
+        "description" : "ร้านขายยา",
+        "phone" : "0850159929",
+        "latitude" : 16.731662,
+        "longitude" : 102.853879,
+        "facebookurl" : "https://www.facebook.com/pages/พิทยา-เภสัช/114236098729435"
+    },
+    "shop9" : {
+        "name" : "ซาลาเปาคุณแหม่ม",
+        "description" : "ร้านขายยา",
+        "phone" : "0819757629",
+        "latitude" : 16.732196,
+        "longitude" : 102.860197,
+        "facebookurl" : "https://www.facebook.com/maampao"
+    },
+    "shop10" : {
+        "name" : "ร้านเฮียเฒ่า",
+        "description" : "ร้านอาหาร",
+        "phone" : "0819752222",
+        "latitude" : 16.732120,
+        "longitude" : 102.859886,
+        "facebookurl" : "https://www.facebook.com/ร้านอาหาร-เฮียเฒ่า/360970197370745"      
+    },
+    "shop11" : {
+        "name" : "ร้านบ้านมอ",
+        "description" : "ร้านอาหาร",
+        "phone" : "0894221045",
+        "latitude" : 16.732750,
+        "longitude" : 102.859935,
+        "facebookurl" : "https://www.facebook.com/banmorebakery" 
+    },
+    "shop12" : {
+        "name" : "เศรษฐียา",
+        "description" : "ร้านขายยา",
+        "phone" : "0866424153",
+        "latitude" : 16.733128,
+        "longitude" : 102.860815,
+        "facebookurl" : "https://www.facebook.com/sethiyakhonkaen" 
+    },
+    "shop13" : {
+        "name" : "เศรษฐียา 2",
+        "description" : "ร้านขายยา",
+        "phone" : "0866424153",
+        "latitude" : 16.732974,
+        "longitude" : 102.861938,
+        "facebookurl" : "https://www.facebook.com/sethiyakhonkaen" 
+    },
+    "shop14" : {
+        "name" : "แม่หลีข้าวสาร",
+        "description" : "ร้านขายข้าวสาร",
+        "phone" : "0924380193",
+        "latitude" : 16.732674,
+        "longitude" : 102.862589,
+        "facebookurl" : "https://www.facebook.com/Maeleerice472khonkan" 
+    },
+    "shop15" : {
+        "name" : "วีที แหนมเนือง",
+        "description" : "ร้านแหนมเนือง",
+        "phone" : "0980961544",
+        "latitude" : 16.732080,
+        "longitude" : 102.862375,
+        "facebookurl" : "https://www.facebook.com/pages/Vt-Namnuengวี-ที-แหนมเนือง-สาขาขอนแก่น/433043493398205" 
+    },
+    "shop16" : {
+        "name" : "จุดสามจุด ม.ขอนแก่น",
+        "description" : "ร้านของหวาน",
+        "phone" : "0980961544",
+        "latitude" : 13.789804,
+        "longitude" : 100.276809,
+        "facebookurl" : "https://www.facebook.com/pages/category/Restaurant/จุด3จุด-สาขาขอนแก่น-114126352459917" 
+    },
+    "shop17" : {
+        "name" : "ครัวสำราญ",
+        "description" : "ร้านอาหาร",
+        "phone" : "043431347",
+        "latitude" : 16.732670,
+        "longitude" : 102.862803,
+        "facebookurl" : "https://www.facebook.com/khrawsamran" 
+    },
+    "shop18" : {
+        "name" : "อ็อดไดนาโม ช่างการไฟฟ้า",
+        "description" : "อู่ซ่อมรถ",
+        "phone" : "0847920688",
+        "latitude" : 16.730986,
+        "longitude" : 102.862412,
+        "facebookurl" : "https://www.facebook.com/pages/อภิชาติไดนาโม/292223274219869"
+    },
+    "shop19" : {
+        "name" : "ร้านโอหวานเบเกอรี่",
+        "description" : "ร้านขนมหวาน",
+        "phone" : "0910624124",
+        "latitude" : 16.730256,
+        "longitude" : 102.862342,
+        "facebookurl" : "https://www.facebook.com/pages/category/Bakery/โอชิน-โฮมเมดเบเกอรี่-ขอนแก่น-283216745803873/"
+    },
+    "shop20" : {
+        "name" : "พรรุ่งเรืองทรัพย์วัสดุก่อสร้าง",
+        "description" : "ร้านวัสดุก่อสร้าง",
+        "phone" : "0434312525",
+        "latitude" : 16.729413,
+        "longitude" : 102.861927
+    },
+    "shop21" : {
+        "name" : "ขอนแก่นกุ้งเผา",
+        "description" : "ร้านอาหาร",
+        "phone" : "0818739343",
+        "latitude" : 16.729919,
+        "longitude" : 102.861034,
+        "facebookurl" : "https://www.facebook.com/suanarhankhonkaenkungpao"
+    },
+    "shop22" : {
+        "name" : "เบสท์โฮม เฟอร์นิเจอร์",
+        "description" : "ร้านของแต่งบ้าน",
+        "phone" : "0893765006",
+        "latitude" : 16.729413,
+        "longitude" : 102.860678,
+        "facebookurl" : "https://www.facebook.com/pages/เบสท์โฮมเฟอร์นิเจอร์-ขอนแก่น/322421261553676"
+    },
+    "shop23" : {
+        "name" : "พันธุ์ไม้เกษตร",
+        "description" : "ร้านขายต้นไม้",
+        "phone" : "0945259354",
+        "latitude" : 16.730392,
+        "longitude" : 102.859198
+    },
+    "shop24" : {
+        "name" : "ถั่วอมตะ ขอนแก่น",
+        "description" : "ร้านผลิตภัณถั่วทุกชนิด",
+        "phone" : "0645365474",
+        "latitude" : 16.730943,
+        "longitude" : 102.858542,
+        "facebookurl" : "https://www.facebook.com/kkamatabeans"
+    },
+    "shop25" : {
+        "name" : "บ้านไร่เกษตรพอเพียง ขอนแก่น",
+        "description" : "ร้านขายสินค้าเกษตร",
+        "phone" : "0982681570",
+        "latitude" : 16.729841,
+        "longitude" : 102.858808,
+        "facebookurl" : "https://www.facebook.com/AnchaleeYuwasak"
+    }
+}
