@@ -2,6 +2,13 @@
 const functions = require('firebase-functions');
 // Import firebase-admin lib
 const admin = require('firebase-admin');
+// Import geo distance
+var Distance = require('geo-distance');
+
+/** Tempory for Test */
+// import json object from json file
+const shopList = require('./shopList.json');
+const itemList = require('./itemList.json');
 
 // initialize
 admin.initializeApp({
@@ -36,84 +43,118 @@ exports.writeUserLocation = functions.https.onRequest(async (request, response) 
 
 
 // database trigger : on user location
-exports.findNearShopAndItem = functions.database.ref('/users/{userId}/location')
+exports.updateNearShopAndItem = functions.database.ref('/users/{userId}/location')
     .onWrite((change,eventContext) => {
-        console.log("change : ")
-        console.log(change);
-        console.log("context : ")
-        console.log(eventContext);
-        
         const location = change.after.val();
-        const userId = eventContext.params.userId;
+        const userid = eventContext.params.userId;
 
-        const shop1 = {
-            name: "วินปากซอยพฤกษา83",
-            description: "วินมอเตอร์ไซด์",
-            phone: "",
-            latitude: 13.7886,
-            longitude: 100.27997
-        };
-        const shop2 = {
-            name: "ร้านดำ",
-            description: "ร้านขายของชำ",
-            phone: "09222480908",
-            latitude: 13.789804,
-            longitude: 100.276809,
-            facebookurl: "http://www.facebook.com/thanawai.srisomp",
-            lineid: "thanawai.dong",
-            website: "http://communitiy.thunkable.com/t/thanawai-from"
-        };
-
-        const shop3 = {
-            name: "ศิริพรเภสัช",
-            description: "ร้านขายยา",
-            phone: "0896641129",
-            latitude: 13.788689,
-            longitude: 100.279974,
-            facebookurl: "http://www.facebook.com/rajavithipharmacy"
-        };
         // update near shop
-        const nearshopref = admin.database().ref('/users/' + userId + '/nearbyshop');
-        nearshopref.set({
-            shop: [shop1,shop2,shop3]
-        });
+        var userLocation = {
+            lat: location.Latitude,
+            lon: location.Longitude
+        }
+        
+        var nearshoplist = new Array();
+        var t_nearitemlist = new Array();
 
-        const item1 = {
-            shopname: "วินปากซอยพฤกษา83",
-            description: "ส่งคน",
-            picURL: "http://readthecloud.co/pic1",
-            price: "เริ่มต้น 10 บาท 2 กม. แรก",
-        };
-        const item2 = {
-            shopname: "วินปากซอยพฤกษา83",
-            description: "ส่งของ",
-            picURL: "http://readthecloud.co/pic2",
-            price: "เริ่มต้น 10 บาท 3 กม. แรก",
-        };
-        const item3 = {
-            shopname: "ร้านดำ",
-            description: "ถั่วดำ",
-            picURL: "http://readthecloud.co/pic3",
-            price: "30 บาท",
-        };
-        const item4 = {
-            shopname: "ถั่วแดง",
-            description: "ส่งคน",
-            picURL: "http://readthecloud.co/pic4",
-            price: "20 บาท",
-        };
-        const item5 = {
-            shopname: "ศิริพรเภสัช",
-            description: "ยาโดยเภสัชกร",
-            picURL: "http://readthecloud.co/pic5",
-            price: "3-500 บาท",
-        };
-        // update near item
-        const nearItemRef = admin.database().ref('/users/' + userId + '/nearbyItem/itemList');
-        nearItemRef.set({
-            item: [item1,item2,item3,item4,item5]
+        // find shop and item near user location
+        admin.database().ref('/users').once('value')
+        .then(users => {
+            // get data success
+            users.forEach(userId => {
+                if(userid !== userId.key)
+                {
+                    // each userId
+                    if(userId.child("shopinfo").exists())
+                    {
+                        // get shopinfo val
+                        var shopRef =  userId.child("shopinfo");
+                        var shopInfo = shopRef.val();
+                        var shopLocation = {
+                            lat: shopInfo.FixedLatitude,
+                            lon: shopInfo.FixedLongitude
+                        }
+                        // find shop distance
+                        var shopDistance = Distance.between(userLocation,shopLocation);
+                        if(shopDistance <= Distance('100 m'))
+                        {
+                            addshop =   {
+                                description: shopInfo.description,
+                                latitude: shopInfo.FixedLatitude,
+                                longitude: shopInfo.FixedLongitude,
+                                name: shopInfo.Name,
+                                phone: shopInfo.PhoneNumber
+                            }
+                            nearshoplist.push(addshop);
+                            
+                            // add near by item
+                            if(shopRef.child("itemlist").exists())
+                            {
+                                var shopitemRef = shopRef.child("itemlist");
+                                shopitemRef.forEach(item => {
+                                    var itemInfo = item.val();
+                                    addItem = {
+                                        description: itemInfo.Description,
+                                        picURL: itemInfo.PicURL,
+                                        price: itemInfo.Price,
+                                        shopname: shopInfo.Name 
+                                    }
+                                    t_nearitemlist.push(addItem);
+                                });
+                            }
+                        }
+                    }       
+                }
+                
+            });
+            // write to firebase
+            // near shop 
+            const nearshopref = admin.database().ref('/users/' + userid + '/nearbyshop');
+            nearshopref.update({
+                shopinfo: nearshoplist,
+                totalshop: nearshoplist.length
+            });
+            // near item
+            const nearItemRef = admin.database().ref('/users/' + userid + '/nearbyitem');
+            nearItemRef.update({
+                iteminfo: getnearbyitem(t_nearitemlist),
+                totalitem: t_nearitemlist.length
+            });
+            return console.log("Finish");   
+        })
+        .catch(error => {
+            console.log(error);
         });
     });
 
-
+function getnearbyitem(t_nearitemlist) {
+    var nearitemlist = [];
+    var numItem = t_nearitemlist.length;
+    console.log("numItem " + numItem);
+    var numPage = parseInt(numItem/10);
+    var remainItem = numItem % 10;
+    var iPage;
+    var iItem;
+    var eachItem = 0;
+    for(iPage = 0;iPage <= numPage;iPage++){
+        var itemlist = [];
+        if(iPage !== numPage){
+            for(iItem = 0;iItem < 10;iItem++){
+                itemlist.push(t_nearitemlist[eachItem])
+                eachItem += 1;
+            }
+            nearitemlist.push(itemlist);
+        }
+        else
+        {
+            for(iItem = 0;iItem < remainItem;iItem++) {
+                itemlist.push(t_nearitemlist[eachItem])
+                eachItem += 1;
+            }
+            nearitemlist.push(itemlist);
+        }
+        
+    }
+    return nearitemlist;
+}
     

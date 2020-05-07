@@ -1,0 +1,31 @@
+{
+  "location" : {
+    "Latitude" : 0,
+    "Longitude" : 0
+  },
+  "shopinfo" : {
+    "Address1" : "",
+    "Address2" : "",
+    "FixedLatitude" : 16.731957,
+    "FixedLongitude" : 102.861568,
+    "Name" : "ร้านค้าประชารัฐ ธงฟ้า ตำบลศิลา",
+    "PhoneNumber" : "0835601321",
+    "PostalCode" : "",
+    "SocialContact" : "",
+    "description" : "ร้านขายของชำ",
+    "itemlist" : {
+      "Item1" : {
+        "Description" : "ไก่ยาง",
+        "PicURL" : "https://scontent.fkkc3-1.fna.fbcdn.net/v/t1.0-9/92642319_2666601433573878_5709620366708572160_n.jpg?_nc_cat=100&_nc_sid=110474&_nc_eui2=AeEBfU8xbbp_GBWyruSDAJ2Vc8ivQj_ASuVzyK9CP8BK5f9_iACWLSwIsURIdltqtzZOkWLvQK2QWEy4WrlOS31V&_nc_ohc=HOL8ml3FOugAX_JopC_&_nc_ht=scontent.fkkc3-1.fna&oh=7e92278cdd85d116ae55376f82b65b35&oe=5ED6D96D",
+        "Price" : "150 บาท/ตัว",
+        "Status" : "OK"
+      },
+      "Item2" : {
+        "Description" : "Hand gel เจลล้างมือ",
+        "PicURL" : "gel.jng",
+        "Price" : "89 บาท",
+        "Status" : "OK"
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "location" : {
+    "Latitude" : 0,
+    "Longitude" : 0
+  },
+  "shopinfo" : {
+    "Address1" : "",
+    "Address2" : "",
+    "FixedLatitude" : 16.732648,
+    "FixedLongitude" : 102.861605,
+    "Name" : "หน้ามอ ร้านขายยา",
+    "PhoneNumber" : "043238079",
+    "PostalCode" : "",
+    "SocialContact" : "",
+    "description" : "ร้านขายยา",
+    "itemlist" : {
+      "Item1" : {
+        "Description" : "สเปรย์แอลกอฮอร์",
+        "PicURL" : "spay.jpg",
+        "Price" : "50 บาท",
+        "Status" : "OK"
+      },
+      "Item2" : {
+        "Description" : "สังฆทานยา",
+        "PicURL" : "sungkatan.jpg",
+        "Price" : "199 บาท",
+        "Status" : "OK"
+      }
+    }
+  }
+}

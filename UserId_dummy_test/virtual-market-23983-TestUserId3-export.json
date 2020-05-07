@@ -1,0 +1,31 @@
+{
+  "location" : {
+    "Latitude" : 0,
+    "Longitude" : 0
+  },
+  "shopinfo" : {
+    "Address1" : "",
+    "Address2" : "",
+    "FixedLatitude" : 16.731596,
+    "FixedLongitude" : 102.861522,
+    "Name" : "Mama Big Restaurant",
+    "PhoneNumber" : "043245789",
+    "PostalCode" : "",
+    "SocialContact" : "",
+    "description" : "ร้านอาหาร",
+    "itemlist" : {
+      "Item1" : {
+        "Description" : "สลัดก๋วยเตี๋ยวคลุกสวน",
+        "PicURL" : "salad.jpg",
+        "Price" : "150 บาท",
+        "Status" : "OK"
+      },
+      "Item2" : {
+        "Description" : "ปลาแช่พริกตำ",
+        "PicURL" : "fish.jpg",
+        "Price" : "120 บาท",
+        "Status" : "OK"
+      }
+    }
+  }
+}
