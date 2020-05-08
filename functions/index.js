@@ -117,19 +117,20 @@ exports.updateNearShopAndItem = functions.database.ref('/users/{userId}/location
                 
             });
             // write to firebase
-            // near shop 
-            const nearshopref = admin.database().ref('/users/' + userid + '/nearbyshop');
-            nearshopref.set({
-                shopinfo: getnearbyshop(t_nearshoplist),
-                totalshop: t_nearshoplist.length
-            });
             // near item
             const nearItemRef = admin.database().ref('/users/' + userid + '/nearbyitem');
             nearItemRef.set({
                 iteminfo: getnearbyitem(t_nearitemlist),
                 totalitem: t_nearitemlist.length
             });
-            return console.log("Update Finish : nearshop");   
+            // near shop 
+            const nearshopref = admin.database().ref('/users/' + userid + '/nearbyshop');
+            nearshopref.set({
+                shopinfo: getnearbyshop(t_nearshoplist),
+                totalshop: t_nearshoplist.length
+            });
+            
+            return console.log("Update Finish : nearshop for userId " + userid);   
         })
         .catch(error => {
             console.log(error);
