@@ -7,8 +7,8 @@ var Distance = require('geo-distance');
 
 /** Tempory for Test */
 // import json object from json file
-const shopList = require('./shopList.json');
-const itemList = require('./itemList.json');
+//const shopList = require('./shopList.json');
+//const itemList = require('./itemList.json');
 
 // initialize
 admin.initializeApp({
@@ -22,6 +22,7 @@ admin.initializeApp({
 //  response.send("Hello from Firebase!");
 // });
 
+/*
 function updateUserLocation(userId,latitude,longitude) {
     admin.database().ref('/users/' + userId + '/location').update({
         Latitude: latitude,
@@ -40,7 +41,7 @@ exports.writeUserLocation = functions.https.onRequest(async (request, response) 
     updateUserLocation(userId,latitude,longitude);
 
 });
-
+*/
 
 // database trigger : on user location
 exports.updateNearShopAndItem = functions.database.ref('/users/{userId}/location')
